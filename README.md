@@ -19,4 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 
 Here’s a demonstration of the app:
 
-[Watch the App Demo on Google Drive]([https://drive.google.com/file/d/YOUR_FILE_ID/view](https://drive.google.com/file/d/1UxhYm95uauLzvPe8ZdlKT9qc4JKMOc2n/view?usp=sharing))
+[Watch the App Demo on Google Drive](https://drive.google.com/file/d/1UxhYm95uauLzvPe8ZdlKT9qc4JKMOc2n/view?usp=sharing)
