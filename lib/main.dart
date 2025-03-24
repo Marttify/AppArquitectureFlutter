@@ -1,27 +1,31 @@
-// ignore_for_file: depend_on_referenced_packages
-
+import 'package:app_arquitecture/viewmodels/profile_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'core/service_locator.dart';
-import 'viewmodels/user_viewmodel.dart';
-import 'views/home_view.dart';
+import 'viewmodels/home_viewmodel.dart';
+import 'views/home/home_view.dart';
 
 void main() {
-  setupLocator();
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeViewModel()),
+        ChangeNotifierProvider(create: (_) => ProfileViewModel()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => locator<UserViewModel>()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomeView(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'App Arquitectura',
+      theme: ThemeData.dark(),
+      home: const HomeView(),
     );
   }
 }
